@@ -1,0 +1,15 @@
+version: '3.8'
+services:  
+    db:
+      container_name: mysql-golang
+      image: mysql
+      restart: always
+      environment:
+        MYSQL_USER: goauth
+        MYSQL_PASSWORD: goauth
+        MYSQL_ROOT_PASSWORD: goauth
+        MYSQL_DATABASE: goauthapi
+      ports:
+      - "3306:3306"
+      volumes:
+      - ./mysql-data:/var/lib/mysql
